@@ -7,7 +7,6 @@ import * as THREE from "three";
 
 function Orb() {
   const meshRef = useRef<THREE.Mesh>(null);
-  const materialRef = useRef<THREE.Material>(null);
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -34,7 +33,7 @@ function Orb() {
   return (
     <Sphere ref={meshRef} args={[1, 64, 64]} scale={2}>
       <MeshDistortMaterial
-        ref={materialRef}
+        // ref={materialRef}
         color="#C81E3A"
         attach="material"
         distort={0.3}
@@ -52,7 +51,7 @@ export function GradientOrb() {
     <div className="relative w-full h-[500px] md:h-[600px] flex items-center justify-center">
       {/* Pure CSS soft glow ring underneath */}
       <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full mix-blend-screen scale-75 animate-pulse" />
-      
+
       <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
         <ambientLight intensity={1} />
         <directionalLight position={[2, 5, 2]} intensity={2} color="#1F2F52" />
