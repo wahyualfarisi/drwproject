@@ -3,21 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base */
+  --color-bg:          #070B14;   /* near-black, navy-tinted */
+  --color-surface:     #0E1422;   /* card backgrounds */
+  --color-surface-2:   #161F33;   /* elevated surfaces */
+  --color-border:      rgba(255,255,255,0.08);
+
+  /* Brand */
+  --color-primary:     #C81E3A;   /* crimson red — matches the "W" mark, used for CTAs/links */
+  --color-primary-glow:#FF3B52;   /* brighter red — hover glow, shadows */
+  --color-accent:      #1F2F52;   /* deep navy — matches the "DR." mark, secondary elements */
+  --color-accent-2:    #8B1336;   /* deep maroon — gradient depth, orb, glows */
+
+  /* Text */
+  --color-text:        #F8FAFC;
+  --color-text-muted:  #94A3B8;
+  --color-text-subtle: #475569;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-family: var(--font-inter), sans-serif;
 }
 
 @layer utilities {
